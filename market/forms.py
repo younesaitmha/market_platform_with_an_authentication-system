@@ -31,3 +31,9 @@ class PurchaseItemForm(FlaskForm):
 
 class SellItemForm(FlaskForm):
     submit = SubmitField(label='Sell Item!')
+
+class ChangePassword(FlaskForm):
+    old_password = PasswordField(label='Old Password:', validators=[DataRequired()])
+    new_password = PasswordField(label='New Password:', validators=[DataRequired()])
+    confirm_new_password = PasswordField(label='Confirm New Password:', validators=[DataRequired()])
+    submit = SubmitField(label='Submit')
