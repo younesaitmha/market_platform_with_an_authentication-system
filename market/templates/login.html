@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login Page
+{% endblock title %}
+
+
+{% block content %}
+    <div class="container text-center">
+            <div class="signup-form">
+            <form method="POST" class="form-register" style="color:white">
+                {{ form.hidden_tag() }}
+                <h1 class="h3 mb-3 font-weight-normal mt-3">
+                    Please Login to your Account
+                </h1>
+                <hr>
+
+                {{ form.username.label(class="mt-2") }}
+                {{ form.username(class="form-control", placeholder="User Name", required="required") }}
+
+                {{ form.password.label(class="mt-2") }}
+                {{ form.password(class="form-control", placeholder="Password", required="required") }}
+
+                <br>
+
+                {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+
+            </form>
+            <div class="container">
+              <div class="text-center mt-4">Do you forget your password? <a href="{{ url_for('register_page') }}">Click here</a></div>
+              <div class="text-center mt-2">Do not have an account? <a href="{{ url_for('register_page') }}">Register here</a></div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+
+
+
+
+{% block js %}
+  <script>
+    $(document).ready(function(){
+      $( "#login" ).addClass( "active" );
+    });
+  </script>
+{% endblock js %}
